@@ -24,5 +24,10 @@ export const styles = StyleSheet.create({
     marginBottom: 15,
     fontSize: 20,
     alignItems: 'center',
+  },
+  codeTitle: {
+    color: colors.purple,
+    marginTop: 10,
+    fontWeight: 'bold'
   }
 })

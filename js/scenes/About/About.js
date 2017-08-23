@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import { styles } from './styles'
 
-const About = ({ data }) => (
+const About = ({ data, shownId, handleShowHide }) => (
    <View style={styles.about}>
     <ScrollView>
       <View style={styles.aboutHead}>
@@ -27,40 +27,24 @@ const About = ({ data }) => (
       <Text style={styles.aboutHeader}>
         Code of Conduct
       </Text>
-      <Text>
-        + Purpose
-      </Text>
-      <Text>
-        + Open Source Citizenship
-      </Text>
-      <Text>
-        + Expected Behavior
-      </Text>
-      <Text>
-        + Unacceptable Behavior
-      </Text>
-      <Text>
-        + Consequences Of Unacceptable Behavior
-      </Text>
-      <Text>
-        + What To Do If You Withesses Or Are Subject To Unacceptable Behavior
-      </Text>
-      <Text>
-        + Contact Information
-      </Text>
-      <Text>
-        + License And Attribution
-      </Text>
-      {data.map(item =>
-      (
-        <Text>
-          {JSON.stringify(item)}
-        </Text>
-      ))}
+      {
+        data.map((item, i) => (
+          <View key={i}>
+            <Text style={styles.codeTitle} onPress={() => handleShowHide(i)}>
+              { (i === shownId) ? '-' : '+' } {item.title}
+            </Text>
+            {
+              (i === shownId) && 
+                <Text style={styles.codeDescr}>
+                  {item.description}-{i}-{shownId}
+                </Text>
+            }
+          </View>
+          ))
+      }
     </ScrollView>
   </View>
 )
-
 
 About.propTypes = {
 
