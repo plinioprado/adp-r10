@@ -9,8 +9,8 @@ import Router from './routes'
 import { colors, typography } from '../config/styles'
 
 import { Text } from 'react-native';
-//import Icon from 'react-native-vector-icons/Ionicons'
-import Icon from 'react-native-vector-icons/FontAwesome'
+import Icon from 'react-native-vector-icons/Ionicons'
+//import Icon from 'react-native-vector-icons/FontAwesome'
 
 const defaultRouteConfig = {
   navigationBar: {
@@ -39,7 +39,7 @@ class NavigationLayout extends Component {
     <TabItem
       id="schedule"
       title="Schedule"
-      renderIcon={(isSelected) => this.renderIcon("ios-information-circle", isSelected)}
+      renderIcon={(isSelected) => this.renderIcon("ios-calendar", isSelected)}
       renderTitle={this.renderTitle}
       >
         <StackNavigation
@@ -53,7 +53,7 @@ class NavigationLayout extends Component {
     <TabItem
       id="appMap"
       title="Map"
-      renderIcon={(isSelected) => this.renderIcon("ios-information-circle", isSelected)}
+      renderIcon={(isSelected) => this.renderIcon("ios-map", isSelected)}
       renderTitle={this.renderTitle}
       >
         <StackNavigation
@@ -67,7 +67,7 @@ class NavigationLayout extends Component {
     <TabItem
       id="faves"
       title="Faves"
-      renderIcon={(isSelected) => this.renderIcon("ios-information-circle", isSelected)}
+      renderIcon={(isSelected) => this.renderIcon("ios-heart", isSelected)}
       renderTitle={this.renderTitle}
       >
         <StackNavigation
@@ -104,7 +104,6 @@ class NavigationLayout extends Component {
 
   renderIcon(iconName, isSelected) {
     const color = isSelected ? 'white' : colors.mediumGrey;
-    return <Text>Hi</Text>
     return <Icon name={iconName} size={24} color={color} />
   }
 
