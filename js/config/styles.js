@@ -14,6 +14,6 @@ export const colors = {
 
 export const typography = {
   baseSize: 16,
-  //fontMain: 'Monserrat',
-  fontMainLight: 'Monserrat-Light'
+  //fontMain: 'Montserrat',
+  fontMainLight: 'Montserrat-Light'
 }

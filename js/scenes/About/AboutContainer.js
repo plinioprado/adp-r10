@@ -1,16 +1,13 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+
+import { connect } from 'react-redux'
+
+import { ActivityIndicator } from 'react-native'
+import { aboutFetch } from '../../redux/modules/about'
 import About from './About'
 
 class AboutContainer extends Component {
-
-  constructor() {
-    super()
-    this.state = {
-      data: [],
-      loading: true
-    }
-  }
 
   static route = {
     navigationBar: {
@@ -18,13 +15,24 @@ class AboutContainer extends Component {
     }
   }
 
-  static propTypes = {
-
+  componentDidMount() {
+    this.props.dispatch(aboutFetch())
   }
 
   render() {
-    return <About/>
+    if ( this.state.aboutData.isLoaded ) {
+      return <ActivityIndicator animating={true} size="small" color="black" />
+    } else {
+      return <About />
+    }
+
   }
 }
 
-export default AboutContainer
+function mapStateToProps(state) {
+  return {
+    data: state.aboutData
+  };
+}
+
+export default connect(mapStateToProps)(AboutContainer)
