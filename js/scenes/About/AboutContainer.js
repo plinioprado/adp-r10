@@ -14,14 +14,14 @@ class AboutContainer extends Component {
     this.state = {shownId: null };
   }
 
+  componentDidMount() {
+    this.props.dispatch(aboutFetch())
+  }
+
   static route = {
     navigationBar: {
       title: 'About'
     }
-  }
-
-  componentDidMount() {
-    this.props.dispatch(aboutFetch())
   }
   
   handleShowHide(id) {
@@ -44,8 +44,8 @@ class AboutContainer extends Component {
 
 function mapStateToProps(state) {
   return {
-    data: state.aboutData.data,
-    isLoading: state.aboutData.isLoading
+    data: state.about.data,
+    isLoading: state.about.isLoading
   }
 }
 

@@ -6,9 +6,9 @@ import {
 } from 'react-native'
 import { styles } from './styles'
 
-const Schedule = () => (
+const Schedule = ({ data }) => (
   <View style={styles.schedule}>
-    <Text>Schedule</Text>
+    <Text>{JSON.stringify(data)}</Text>
   </View>
 )
 
