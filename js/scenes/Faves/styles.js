@@ -1,7 +1,10 @@
 import { StyleSheet } from 'react-native'
 
 export const styles = StyleSheet.create({
-  fave: {
-    paddingTop: 20
+  faves: {
+    paddingTop: 10,
+    paddingLeft: 15,
+    paddingRight: 15,
+    flex: 1,
   }
 })

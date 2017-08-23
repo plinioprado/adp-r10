@@ -2,14 +2,14 @@ import React from 'react'
 import protoTypes from 'prop-types'
 import {
   View,
-  Text,
-  Image
+  Text
 } from 'react-native';
 import { styles } from './styles'
 
-const Session = () => (
-  <View style={styles.session}>
-    <Text>Session</Text>
-  </View>
+const Speaker = () => (
+  <View style={styles.about}>
+    <Text>Speaker</Text>
+  </View> 
 )
-export default Session
+
+export default Speaker

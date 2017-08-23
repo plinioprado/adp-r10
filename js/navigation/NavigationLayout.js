@@ -37,6 +37,48 @@ class NavigationLayout extends Component {
     >
 
     <TabItem
+      id="schedule"
+      title="Schedule"
+      renderIcon={(isSelected) => this.renderIcon("ios-information-circle", isSelected)}
+      renderTitle={this.renderTitle}
+      >
+        <StackNavigation
+          id="schedule"
+          navigatorUID="schedule"
+          initialRoute={Router.getRoute('schedule')}
+          defaultRouteConfig={defaultRouteConfig}
+        />
+    </TabItem>
+
+    <TabItem
+      id="appMap"
+      title="Map"
+      renderIcon={(isSelected) => this.renderIcon("ios-information-circle", isSelected)}
+      renderTitle={this.renderTitle}
+      >
+        <StackNavigation
+          id="appMap"
+          navigatorUID="appMap"
+          initialRoute={Router.getRoute('appMap')}
+          defaultRouteConfig={defaultRouteConfig}
+        />
+    </TabItem>
+
+    <TabItem
+      id="faves"
+      title="Faves"
+      renderIcon={(isSelected) => this.renderIcon("ios-information-circle", isSelected)}
+      renderTitle={this.renderTitle}
+      >
+        <StackNavigation
+          id="faves"
+          navigatorUID="faves"
+          initialRoute={Router.getRoute('faves')}
+          defaultRouteConfig={defaultRouteConfig}
+        />
+    </TabItem>
+
+    <TabItem
       id="about"
       title="About"
       renderIcon={(isSelected) => this.renderIcon("ios-information-circle", isSelected)}
@@ -50,20 +92,6 @@ class NavigationLayout extends Component {
         />
     </TabItem>
 
-    <TabItem
-      id="session"
-      title="Session"
-      renderIcon={(isSelected) => this.renderIcon("ios-information-circle", isSelected)}
-      renderTitle={this.renderTitle}
-      >
-        <StackNavigation
-            id="session"
-            navigatorUID="session"
-            initialRoute={Router.getRoute('session')}
-            defaultRouteConfig={defaultRouteConfig}
-        />
-      </TabItem>
-      
     </TabNavigation>
     )
   }

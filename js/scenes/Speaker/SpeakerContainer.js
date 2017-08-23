@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import About from './About'
+import Speaker from './Speaker'
 
-class AboutContainer extends Component {
+class SpeakerContainer extends Component {
 
   constructor() {
     super()
@@ -14,17 +14,13 @@ class AboutContainer extends Component {
 
   static route = {
     navigationBar: {
-      title: 'About'
+      title: 'Speaker'
     }
   }
 
-  static propTypes = {
-
-  }
-
   render() {
-    return <About/>
+    return <Speaker/>
   }
 }
 
-export default AboutContainer
+export default SpeakerContainer

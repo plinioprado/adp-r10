@@ -1,15 +1,18 @@
 import { createRouter } from '@expo/ex-navigation';
 
 import About from '../scenes/About'
-import Session from '../scenes/Session'
-import Fave from '../scenes/Fave/'
+import AppMap from '../scenes/AppMap'
+import Faves from '../scenes/Faves/'
 import NavigationLayout from './NavigationLayout'
+import Session from '../scenes/Session'
+import Schedule from '../scenes/Schedule'
 
 const Router = createRouter(() => ({
+  navigation: () => NavigationLayout,
+  schedule: () => Schedule,
+  appMap: () => AppMap,
+  faves: () => Faves,
   about: () => About,
-  session: () => Session,
-  fave: () => Fave,
-  navigation: () => NavigationLayout
 }))
 
 export default Router

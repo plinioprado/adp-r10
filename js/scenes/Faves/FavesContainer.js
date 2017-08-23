@@ -1,18 +1,18 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import Fave from './Fave'
+import Faves from './Faves'
 
-class FaveContainer extends Component {
+class FavesContainer extends Component {
 
   static route = {
     navigationBar: {
-      title: 'about'
+      title: 'Faves'
     }
   }
 
   render() {
-    return <Fave />
+    return <Faves />
   }
 }
 
-export default FaveContainer
+export default FavesContainer

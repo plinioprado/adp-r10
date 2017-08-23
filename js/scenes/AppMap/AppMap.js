@@ -2,14 +2,13 @@ import React from 'react'
 import protoTypes from 'prop-types'
 import {
   View,
-  Text,
-  Image
+  Text
 } from 'react-native';
 import { styles } from './styles'
 
-const Session = () => (
-  <View style={styles.session}>
-    <Text>Session</Text>
+const AppMap = () => (
+  <View style={styles.appMap}>
+    <Text>AppMap</Text>
   </View>
 )
-export default Session
+export default AppMap
