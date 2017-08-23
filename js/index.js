@@ -9,7 +9,7 @@ import {
 
 import { colors } from './config/styles'
 import Router from './navigation/routes'
-import { Store } from  './redux/store'
+import Store from  './redux/store'
 
 import {
   

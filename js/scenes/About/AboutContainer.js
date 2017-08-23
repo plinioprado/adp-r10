@@ -20,19 +20,19 @@ class AboutContainer extends Component {
   }
 
   render() {
-    if ( this.state.aboutData.isLoaded ) {
+    if ( this.props.isLoading ) {
       return <ActivityIndicator animating={true} size="small" color="black" />
     } else {
       return <About />
     }
-
   }
 }
 
 function mapStateToProps(state) {
   return {
-    data: state.aboutData
-  };
+    data: state.aboutData.data,
+    isLoading: state.aboutData.isLoading
+  }
 }
 
 export default connect(mapStateToProps)(AboutContainer)
