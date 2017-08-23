@@ -51,13 +51,12 @@ const About = ({ data }) => (
       <Text>
         + License And Attribution
       </Text>
-      <Text>
-        {JSON.stringify(data)}
-      </Text>
-      data.map(item =>
+      {data.map(item =>
       (
-
-      ))
+        <Text>
+          {JSON.stringify(item)}
+        </Text>
+      ))}
     </ScrollView>
   </View>
 )
