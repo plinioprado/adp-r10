@@ -96,12 +96,6 @@ class NavigationLayout extends Component {
     )
   }
 
-    /*
-    ios-calendar 24
-    ios-heart
-    ios-information-circle
-    */
-
   renderIcon(iconName, isSelected) {
     const color = isSelected ? 'white' : colors.mediumGrey;
     return <Icon name={iconName} size={24} color={color} />

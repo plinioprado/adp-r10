@@ -35,7 +35,7 @@ export default class R10 extends Component {
             id="root"
             initialRoute={Router.getRoute('navigation')}
             defaultRouteConfig={{
-              styles: { ...NavigationStyles.SlideVertical,}
+              styles: { ...NavigationStyles.SlideVertical, }
             }}
            />
         </NavigationProvider>

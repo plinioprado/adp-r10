@@ -23,7 +23,7 @@ class AboutContainer extends Component {
     if ( this.props.isLoading ) {
       return <ActivityIndicator animating={true} size="small" color="black" />
     } else {
-      return <About />
+      return <About data={this.props.data} />
     }
   }
 }
