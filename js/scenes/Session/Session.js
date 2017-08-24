@@ -22,10 +22,13 @@ const Session = ({ sessionData, speakerData }) => (
     <Text style={styles.time}>{Moment.unix(sessionData.start_time).format('h:mm A')}</Text>
     <Text style={styles.descr}>{sessionData.description}</Text>
     <Text style={styles.presented}>Presented by:</Text>
-    <TouchableWithoutFeedback onPress={() => goToSpeaker('session', speakerData)}>
+    <TouchableWithoutFeedback onPress={() => goToSpeaker(speakerData)}>
+      <View>
+      <Image style={styles.photo} source={{uri: speakerData.image}} />
       <Text style={styles.speaker} >
-        <Image style={styles.photo} source={{uri: speakerData.image}} /> {speakerData.name}
+         {speakerData.name}
       </Text>
+      </View>
     </TouchableWithoutFeedback>
   </View>
 )
