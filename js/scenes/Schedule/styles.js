@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native'
+import { colors } from '../../config/styles'
 
 export const styles = StyleSheet.create({
   schedule: {
@@ -6,5 +7,19 @@ export const styles = StyleSheet.create({
     paddingLeft: 15,
     paddingRight: 15,
     flex: 1,
+  },
+  card: {
+    padding: 15,
+    borderBottomColor: colors.mediumGrey,
+    borderBottomWidth: StyleSheet.hairlineWidth,
+    flexWrap: 'wrap',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  cardTitle: {
+    width: '100%'
+  },
+  cardLocal: {
+    color: colors.mediumGrey
   }
 })

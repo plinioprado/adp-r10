@@ -12,5 +12,8 @@ export const styles = StyleSheet.create({
   },
   cardTitle: {
     width: '100%'
+  },
+  cardLocal: {
+    color: colors.mediumGrey
   }
 })

@@ -36,7 +36,7 @@ const About = ({ data, shownId, handleShowHide }) => (
             {
               (i === shownId) && 
                 <Text style={styles.codeDescr}>
-                  {item.description}-{i}-{shownId}
+                  {item.description}
                 </Text>
             }
           </View>

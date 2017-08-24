@@ -13,6 +13,7 @@ const Router = createRouter(() => ({
   appMap: () => AppMap,
   faves: () => Faves,
   about: () => About,
+  session: () => Session
 }))
 
 export default Router

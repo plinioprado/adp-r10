@@ -8,6 +8,10 @@ import {
  } from 'react-native'
 import { sessionFetch } from '../../redux/modules/session'
 
+import { NavigationActions } from '@expo/ex-navigation'
+import Router from '../../navigation/routes'
+import Store from  '../../redux/store'
+
 import SessionCard from '../../components/SessionCard'
 import Schedule from './Schedule'
 
@@ -23,20 +27,24 @@ class ScheduleContainer extends Component {
     }
   }
 
+  // goToSession(data) {
+  //   let navigatorUID = Store.getState().navigation.currentNavigatorUID;
+  //   Store.dispatch(NavigationActions.push(
+  //     navigatorUID,
+  //     Router.getRoute('session'), data))
+  // }
+
   render() {
     return (
       <View>
         {
-          this.props.data.map((item) => (<SessionCard session={{item}} />))
+          this.props.data.map((item) => (<Schedule
+            session={{item}}
+            />))
         }
       </View>
     )
   }
-  // render() {
-  //   return (
-  //     this.props.data.map((item) => (<SessionCard session={{ description: 'test'}} />)) 
-  //   )
-  // }
 }
 
 function mapStateToProps(state) {
