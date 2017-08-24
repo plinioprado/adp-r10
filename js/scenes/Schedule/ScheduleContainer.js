@@ -27,13 +27,6 @@ class ScheduleContainer extends Component {
     }
   }
 
-  // goToSession(data) {
-  //   let navigatorUID = Store.getState().navigation.currentNavigatorUID;
-  //   Store.dispatch(NavigationActions.push(
-  //     navigatorUID,
-  //     Router.getRoute('session'), data))
-  // }
-
   render() {
     return (
       <View>

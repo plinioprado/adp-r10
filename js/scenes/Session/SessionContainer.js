@@ -14,9 +14,10 @@ class SessionContainer extends Component {
     }
   }
 
-
   render() {
-    return <Session/>
+    return <Session
+      session={this.props.sessionData}
+      />
   }
 }
 
