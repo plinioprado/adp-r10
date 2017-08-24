@@ -1,10 +1,10 @@
 import React from 'react'
 import protoTypes from 'prop-types'
 import {
-  TouchableWithoutFeedback,
+  Image,
   View,
   Text,
-  Image
+  TouchableHighlight
 } from 'react-native';
 
 import { goToSpeaker } from '../../navigation/navigationHelpers'
@@ -22,14 +22,13 @@ const Session = ({ sessionData, speakerData }) => (
     <Text style={styles.time}>{Moment.unix(sessionData.start_time).format('h:mm A')}</Text>
     <Text style={styles.descr}>{sessionData.description}</Text>
     <Text style={styles.presented}>Presented by:</Text>
-    <TouchableWithoutFeedback onPress={() => goToSpeaker(speakerData)}>
-      <View>
-      <Image style={styles.photo} source={{uri: speakerData.image}} />
-      <Text style={styles.speaker} >
-         {speakerData.name}
-      </Text>
+    <TouchableHighlight onPress={() => goToSpeaker(speakerData)}>
+      <View style={styles.speaker}>
+        <Image style={styles.photo} source={{uri: speakerData.image}} />
+        <Text>{speakerData.name}</Text>
       </View>
-    </TouchableWithoutFeedback>
+    </TouchableHighlight>
   </View>
-)
+  )
+
 export default Session

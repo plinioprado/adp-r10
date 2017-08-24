@@ -1,16 +1,10 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+
+import { connect } from 'react-redux'
 import Speaker from './Speaker'
 
 class SpeakerContainer extends Component {
-
-  constructor() {
-    super()
-    this.state = {
-      data: [],
-      loading: true
-    }
-  }
 
   static route = {
     navigationBar: {
@@ -19,7 +13,9 @@ class SpeakerContainer extends Component {
   }
 
   render() {
-    return <Speaker/>
+    return <Speaker
+      speakerData={this.props.speakerData}
+      />
   }
 }
 

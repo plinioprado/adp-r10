@@ -34,7 +34,6 @@ export function sessionLoad(data) {
 // Thunk
 
 export function sessionFetch(id) {
-  console.log('id', id)
   return function(dispatch) {
     let endPoint = `https://r10app-95fea.firebaseio.com/speakers.json?orderBy=%22speaker_id%22&equalTo=%22${id}%22`
     fetch(endPoint)

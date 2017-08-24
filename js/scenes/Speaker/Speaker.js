@@ -6,9 +6,9 @@ import {
 } from 'react-native';
 import { styles } from './styles'
 
-const Speaker = () => (
+const Speaker = ({ speakerData }) => (
   <View style={styles.about}>
-    <Text>Speaker</Text>
+    <Text>{JSON.stringify(speakerData)}</Text>
   </View> 
 )
 

@@ -9,9 +9,9 @@ export const goToSession = (currentNavigatorUID, sessionData) => {
   ));
 }
 
-export const goToSpeaker = (currentNavigatorUID, speakerData) => {
+export const goToSpeaker = (speakerData) => {
   Store.dispatch(NavigationActions.push(
-    currentNavigatorUID,
+    'root',
     Router.getRoute('speaker', { speakerData })
   ));
 }

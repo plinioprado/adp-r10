@@ -41,11 +41,14 @@ export const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   speaker: {
-
+    flexWrap: 'wrap',
+    flexDirection: 'row',
+    alignItems: 'center',
   },
   photo: {
     width: 50,
     height: 50,
+    marginRight: 15,
     borderRadius: 25
   }
 })
