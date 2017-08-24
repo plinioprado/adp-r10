@@ -10,7 +10,6 @@ import { colors, typography } from '../config/styles'
 
 import { Text } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons'
-//import Icon from 'react-native-vector-icons/FontAwesome'
 
 const defaultRouteConfig = {
   navigationBar: {
