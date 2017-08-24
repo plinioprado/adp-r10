@@ -3,15 +3,18 @@ import { colors} from '../config/styles'
 
 export const styles = StyleSheet.create({
   header: {
-    height: 20
+    height: 10
   },
   selectedItemStyle: {
     backgroundColor: colors.lightGrey
   },
   titleText: {
-    fontWeight: 'bold'
+    fontSize: 16,
+    marginLeft: 8
   },
   selectedTitleText: {
-    color: 'white'
+    fontSize: 16,
+    color: colors.purple,
+    marginLeft: 8
   }
 })

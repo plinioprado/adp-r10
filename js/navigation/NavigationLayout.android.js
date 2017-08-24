@@ -35,6 +35,7 @@ class NavigationLayout extends Component {
         <DrawerNavigationItem
           id='schedule'
           selectedStyle={styles.selectedItemStyle}
+          renderIcon={(isSelected) => this.renderIcon("md-calendar", isSelected)}
           renderTitle={isSelected => this._renderTitle('Schedule', isSelected)}
         >
         <StackNavigation
@@ -48,6 +49,7 @@ class NavigationLayout extends Component {
       <DrawerNavigationItem
           id='appMap'
           selectedStyle={styles.selectedItemStyle}
+          renderIcon={(isSelected) => this.renderIcon("md-map", isSelected)}
           renderTitle={isSelected => this._renderTitle('Map', isSelected)}
         >
         <StackNavigation
@@ -61,6 +63,7 @@ class NavigationLayout extends Component {
       <DrawerNavigationItem
           id='faves'
           selectedStyle={styles.selectedItemStyle}
+          renderIcon={(isSelected) => this.renderIcon("md-heart", isSelected)}
           renderTitle={isSelected => this._renderTitle('Faves', isSelected)}
         >
         <StackNavigation
@@ -74,6 +77,7 @@ class NavigationLayout extends Component {
       <DrawerNavigationItem
           id='about'
           selectedStyle={styles.selectedItemStyle}
+          renderIcon={(isSelected) => this.renderIcon("md-information-circle", isSelected)}
           renderTitle={isSelected => this._renderTitle('About', isSelected)}
         >
         <StackNavigation
@@ -104,7 +108,7 @@ class NavigationLayout extends Component {
   };
 
   renderIcon(iconName, isSelected) {
-    const color = isSelected ? 'white' : colors.mediumGrey;
+    const color = isSelected ? colors.purple : colors.mediumGrey;
     return <Icon name={iconName} size={24} color={color} />
   }
 
@@ -118,23 +122,5 @@ class NavigationLayout extends Component {
     return <Text style={titles}>{title}</Text>
   }
 }
-
-// const styles = StyleSheet.create({
-//   header: {
-//     height: 20
-//   },
-
-//   selectedItemStyle: {
-//     backgroundColor: 'blue'
-//   },
-
-//   titleText: {
-//     fontWeight: 'bold'
-//   },
-
-//   selectedTitleText: {
-//     color: 'white'
-//   }
-// })
 
 export default NavigationLayout
