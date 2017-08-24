@@ -31,12 +31,21 @@ export const styles = StyleSheet.create({
   },
   presented: {
     width: '100%',
-    color: colors.mediumGrey
+    color: colors.mediumGrey,
+    marginBottom: 12
+  },
+  session2: {
+    paddingLeft: 15,
+    paddingRight: 15,
+    flexWrap: 'wrap',
+    flexDirection: 'row',
   },
   speaker: {
-    width: '100%'
+
   },
   photo: {
-    width: '100%'
+    width: 50,
+    height: 50,
+    borderRadius: 25
   }
 })

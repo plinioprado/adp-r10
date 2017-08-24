@@ -6,7 +6,7 @@ import {
   ActivityIndicator,
   View
  } from 'react-native'
-import { sessionFetch } from '../../redux/modules/session'
+import { scheduleFetch } from '../../redux/modules/schedule'
 
 import { NavigationActions } from '@expo/ex-navigation'
 import Router from '../../navigation/routes'
@@ -18,7 +18,7 @@ import Schedule from './Schedule'
 class ScheduleContainer extends Component {
 
   componentDidMount() {
-    this.props.dispatch(sessionFetch())
+    this.props.dispatch(scheduleFetch())
   }
 
   static route = {
@@ -30,9 +30,10 @@ class ScheduleContainer extends Component {
   render() {
     return (
       <View>
-        {
-          this.props.data.map((item) => (<Schedule
+        {   
+          this.props.data.map((item, index) => (<Schedule
             session={{item}}
+            key={index}
             />))
         }
       </View>
@@ -42,8 +43,8 @@ class ScheduleContainer extends Component {
 
 function mapStateToProps(state) {
   return {
-    data: state.session.data,
-    isLoading: state.session.isLoading
+    data: state.schedule.data,
+    isLoading: state.schedule.isLoading
   }
 }
 
