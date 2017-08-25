@@ -34,13 +34,14 @@ export const favesQuery = () => {
 export const faveToggle =(id) => {
   realm.write(() => {
     let faves = realm.objects('Fave').filtered('id == $0', id).map(fave => fave)
-    if (faves.length) {
+    if (faves && faves.length) {
       realm.delete(faves[0]);
     } else {
       realm.create('Fave', { id: id, faved_on: new Date() })
     }
   });
-  return !!realm.objects('Fave').filtered('id == $0', id).map(fave => fave).length
+  faves = realm.objects('Fave').filtered('id == $0', id).map(fave => fave)
+  return !!(faves && faves.length)
 }
 
 const realm =  new Realm({schema: [Fave]})

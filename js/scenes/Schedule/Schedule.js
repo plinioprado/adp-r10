@@ -2,6 +2,7 @@ import React from 'react'
 import protoTypes from 'prop-types'
 import {
   Platform,
+  SectionList,
   View,
   Text
 } from 'react-native'
@@ -21,5 +22,6 @@ const Schedule = ({ schedule }) => (
     }
   </View>
 )
+
 
 export default Schedule

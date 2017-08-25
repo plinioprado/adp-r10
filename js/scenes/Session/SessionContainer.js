@@ -28,11 +28,15 @@ class SessionContainer extends Component {
   }
 
   render() {
-    return <Session
-      sessionData={this.props.sessionData}
-      speakerData={this.props.speakerData}
-      toggleFav={(id) => toggleFav(id)}
-      />
+    if (this.props.isLoading) {
+      return <ActivityIndicator />
+    } else {
+      return <Session
+        sessionData={this.props.sessionData}
+        speakerData={this.props.speakerData}
+        toggleFav={(id) => toggleFav(id)}
+        />
+    }
   }
 }
 

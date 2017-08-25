@@ -21,10 +21,11 @@ export function ScheduleReducer(state = initialState, action) {
       //const session = state.data.find(item=> (item.id === id))
       //console.log('session',session)
       console.log('will reduce2')
-      return {
-        ...isLoading,
-        ...data
-      }
+      // return {
+      //   ...isLoading,
+      //   ...data
+      // }
+      return state
     default:
       return state
   }

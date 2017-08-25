@@ -28,16 +28,21 @@ class ScheduleContainer extends Component {
   }
 
   render() {
-    return (
-      <View>
-        {
-          this.props.data.map((item, index) => (<Schedule
-            schedule={{item}}
-            key={index}
-            />))
-        }
-      </View>
-    )
+    if (this.props.isLoading) {
+      return <ActivityIndicator />
+    } else {
+      return (
+        <View>
+          {
+            this.props.data.map((item, index) => (<Schedule
+              schedule={{item}}
+              key={index}
+              />))
+          }
+        </View>
+      )
+    }
+    
   }
 }
 
