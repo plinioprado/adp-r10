@@ -35,7 +35,7 @@ const Session = ({ sessionData, speakerData, toggleFav }) => (
     <View style={styles.faves}>
       <Button
         style={styles.button}
-        onPress={() => toggleFav(sessionData.session_id)}
+        onPress={() => toggleFav(sessionData)} // TODO: check after in reducer
         title={sessionData.fav ? 'Remove From Favorites' : 'Add to Favorites'}
         color="#841584"
         accessibilityLabel="Learn more about this purple button"

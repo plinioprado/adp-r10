@@ -18,14 +18,14 @@ export function ScheduleReducer(state = initialState, action) {
         data: action.payload
       }
     case TOGGLE_FAV:
-      //const session = state.data.find(item=> (item.id === id))
-      //console.log('session',session)
-      console.log('will reduce2')
-      // return {
-      //   ...isLoading,
-      //   ...data
-      // }
-      return state
+      const newData = this.state.data.map((item) => { 
+        if (item.session_id === action.payload.id ) { item.fav = action.payload.fav } 
+        return item
+      });
+      return {
+        isLoading: false,
+        data: newData
+      }
     default:
       return state
   }
@@ -41,16 +41,12 @@ export function scheduleLoad(data) {
 }
 
 // TODO: call reducer and update store
-export function toggleFav(id) {
-  console.log('will toggle '+id)
-  const toggle = faveToggle(id)
-  console.log('toggled to '+toggle)
+export function toggleFav(item) {
+  console.log(item)
+  item.fav = faveToggle(item.session_id)
   return {
     type: TOGGLE_FAV,
-    payload: {
-      id: id,
-      toggle: toggle
-    }
+    payload: item
   }
 }
 
