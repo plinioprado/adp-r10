@@ -32,7 +32,7 @@ class ScheduleContainer extends Component {
       <View>
         {
           this.props.data.map((item, index) => (<Schedule
-            session={{item}}
+            schedule={{item}}
             key={index}
             />))
         }

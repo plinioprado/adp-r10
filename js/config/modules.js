@@ -9,26 +9,38 @@ const Fave = {
   }
 };
 
-export const createfave = (faveId) => {
-  realm.write(() => {
-    realm.create('Fave', {
-      id: faveId,
-      faved_on: Date.now()
-    });
-  })
+// export const createfave = (faveId) => {
+//   realm.write(() => {
+//     realm.create('Fave', {
+//       id: faveId,
+//       faved_on: Date.now()
+//     });
+//   })
+// }
+
+// export const deleteFave = (faveId) => {
+//   realm.write(() => {
+//     let fave = realm.objects('Fave')
+//       .filtered('id == $0', faveId);
+//     realm.delete(fave);
+//   });
+// }
+
+export const favesQuery = () => {
+  let faves = realm.objects('Fave').map(fave => fave);
+  return faves
 }
 
-export const deleteFave = (faveId) => {
+export const faveToggle =(id) => {
   realm.write(() => {
-    let fave = realm.objects('Fave')
-      .filtered('id == $0', faveId);
-    realm.delete(fave);
+    let faves = realm.objects('Fave').filtered('id == $0', id).map(fave => fave)
+    if (faves.length) {
+      realm.delete(faves[0]);
+    } else {
+      realm.create('Fave', { id: id, faved_on: new Date() })
+    }
   });
-}
-
-export const queryFaves = () => {
-  let fave = realm.objects('Fave')
-  return fave
+  return !!realm.objects('Fave').filtered('id == $0', id).map(fave => fave).length
 }
 
 const realm =  new Realm({schema: [Fave]})

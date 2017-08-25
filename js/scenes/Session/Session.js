@@ -1,6 +1,7 @@
 import React from 'react'
 import protoTypes from 'prop-types'
 import {
+  Button,
   Image,
   View,
   Text,
@@ -14,10 +15,12 @@ import { colors } from '../../config/styles'
 import { styles } from './styles'
 import Moment from 'moment';
 
-const Session = ({ sessionData, speakerData }) => (
+const Session = ({ sessionData, speakerData, toggleFav }) => (
   <View style={styles.session}>
     <Text style={styles.local}>{sessionData.location}</Text>
-    <Icon name="ios-heart" size={20} color={colors.Red} />
+    { sessionData.fav &&
+      <Icon name="ios-heart" size={20} color={colors.Red} />
+    }
     <Text style={styles.title}>{sessionData.title}</Text>
     <Text style={styles.time}>{Moment.unix(sessionData.start_time).format('h:mm A')}</Text>
     <Text style={styles.descr}>{sessionData.description}</Text>
@@ -28,6 +31,16 @@ const Session = ({ sessionData, speakerData }) => (
         <Text>{speakerData.name}</Text>
       </View>
     </TouchableHighlight>
+    <Text style={styles.separator}></Text>
+    <View style={styles.faves}>
+      <Button
+        style={styles.button}
+        onPress={() => toggleFav(sessionData.session_id)}
+        title={sessionData.fav ? 'Remove From Favorites' : 'Add to Favorites'}
+        color="#841584"
+        accessibilityLabel="Learn more about this purple button"
+      />
+    </View>
   </View>
   )
 

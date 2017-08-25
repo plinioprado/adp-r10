@@ -50,5 +50,14 @@ export const styles = StyleSheet.create({
     height: 50,
     marginRight: 15,
     borderRadius: 25
+  },
+  faves: {
+    marginTop: 20,
+    padding: 15,
+    borderTopColor: colors.mediumGrey,
+    borderTopWidth: 1,
+  },
+  button: {
+    width: '100%'
   }
 })
