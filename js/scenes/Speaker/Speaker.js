@@ -21,7 +21,6 @@ const Speaker = ({ speakerData }) => (
         title="Read More on Wikipedia"
         accessibilityLabel="Read More on Wikipedia"
       />
-
     </View>
   </ScrollView>
 )

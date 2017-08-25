@@ -1,6 +1,8 @@
 // Reducers
+import { queryFaves } from '../../config/modules'
 
 const SCHEDULE_LOAD = 'SCHEDULE_LOAD'
+const TOGGLE_FAV = 'TOGGLE_FAV'
 
 const initialState = {
   isLoading: true,
@@ -14,6 +16,8 @@ export function ScheduleReducer(state = initialState, action) {
         isLoading: false,
         data: action.payload
       }
+    case TOGGLE_FAV:
+      return state
     default:
       return state
   }
@@ -28,6 +32,10 @@ export function scheduleLoad(data) {
   }
 }
 
+export function toggleFav(id) {
+  console.log('toggling')
+}
+
 // Thunk
 
 export function scheduleFetch() {
@@ -36,7 +44,13 @@ export function scheduleFetch() {
     fetch(endPoint)
       .then(response =>response.json())
       .then(json => {
-        const data = json
+        // get faves
+        console.log('faveList')
+        const faveList = queryFaves()
+        console.log(faveList)
+
+        // add faves to schedule
+        const data = json.map(item => {item.fav = false; return item})
         dispatch(scheduleLoad(data))
       })
       .catch(error => console.log(`Error loading Sessions: ${error}`))
