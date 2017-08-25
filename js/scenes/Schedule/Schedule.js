@@ -23,5 +23,4 @@ const Schedule = ({ schedule }) => (
   </View>
 )
 
-
 export default Schedule
