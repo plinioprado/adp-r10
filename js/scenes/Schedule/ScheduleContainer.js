@@ -30,7 +30,7 @@ class ScheduleContainer extends Component {
   render() {
     return (
       <View>
-        {   
+        {
           this.props.data.map((item, index) => (<Schedule
             session={{item}}
             key={index}

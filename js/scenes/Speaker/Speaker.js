@@ -1,15 +1,29 @@
 import React from 'react'
 import protoTypes from 'prop-types'
 import {
-  View,
-  Text
+  Button,
+  Image,
+  Linking,
+  ScrollView,
+  Text,
+  View
 } from 'react-native';
-import { styles } from './styles'
+import { styles, colors } from './styles'
 
 const Speaker = ({ speakerData }) => (
-  <View style={styles.about}>
-    <Text>{JSON.stringify(speakerData)}</Text>
-  </View> 
+  <ScrollView style={styles.speaker} >
+    <View style={styles.card}>
+      <Image style={styles.photo} source={{uri: speakerData.image}} />
+      <Text style={styles.name} >{speakerData.name}</Text>
+      <Text style={styles.bio} >{speakerData.bio}</Text>
+      <Button
+        onPress={() => Linking.openURL(speakerData.url).catch(err => ('Error: ', err))}
+        title="Read More on Wikipedia"
+        accessibilityLabel="Read More on Wikipedia"
+      />
+
+    </View>
+  </ScrollView>
 )
 
 export default Speaker
