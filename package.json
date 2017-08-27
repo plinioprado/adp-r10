@@ -14,6 +14,8 @@
 		"prop-types": "^15.5.10",
 		"react": "16.0.0-alpha.12",
 		"react-native": "0.47.1",
+		"react-native-linear-gradient": "^2.3.0",
+		"react-native-maps": "^0.16.2",
 		"react-native-vector-icons": "^4.3.0",
 		"react-proptypes": "^1.0.0",
 		"react-redux": "^5.0.6",

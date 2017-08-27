@@ -12,7 +12,6 @@ const initialState = {
 export function ScheduleReducer(state = initialState, action) {
   switch (action.type) {
     case SCHEDULE_LOAD:
-      console.log('will reduce1')
       return {
         isLoading: false,
         data: action.payload
@@ -42,7 +41,6 @@ export function scheduleLoad(data) {
 
 // TODO: call reducer and update store
 export function toggleFav(item) {
-  console.log(item)
   item.fav = faveToggle(item.session_id)
   return {
     type: TOGGLE_FAV,
@@ -58,11 +56,7 @@ export function scheduleFetch() {
     fetch(endPoint)
       .then(response =>response.json())
       .then(json => {
-        // get faves
         const faveList = favesQuery()
-        console.log('faveList', faveList)
-
-        // add faves to schedule TODO: use spread operator 
         const data = json.map(item => {
           item.fav = !!faveList.find(it => (it.id === item.session_id))
           return item})

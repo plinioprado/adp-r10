@@ -8,7 +8,7 @@ import {
  } from 'react-native'
 import { sessionFetch } from '../../redux/modules/session'
 
-import { toggleFav } from '../../redux/modules/schedule'
+import { toggleFav, scheduleFetch } from '../../redux/modules/schedule'
 import { NavigationActions } from '@expo/ex-navigation'
 import Router from '../../navigation/routes'
 import Store from  '../../redux/store'
@@ -27,6 +27,11 @@ class SessionContainer extends Component {
     }
   }
 
+  handleToggle(id) {
+    toggleFav(id)
+    this.render()
+  }
+
   render() {
     if (this.props.isLoading) {
       return <ActivityIndicator />
@@ -34,7 +39,7 @@ class SessionContainer extends Component {
       return <Session
         sessionData={this.props.sessionData}
         speakerData={this.props.speakerData}
-        toggleFav={(id) => toggleFav(id)}
+        toggleFav={(id) => this.handleToggle(id)}
         />
     }
   }

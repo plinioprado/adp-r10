@@ -1,18 +1,47 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import Faves from './Faves'
+import { connect } from 'react-redux'
+
+import { ActivityIndicator} from 'react-native'
+import { scheduleFetch } from '../../redux/modules/schedule'
+import Schedule from '../Schedule/Schedule'
 
 class FavesContainer extends Component {
 
-  static route = {
-    navigationBar: {
-      title: 'Faves'
+    componentDidMount(props) {
+      this.props.dispatch(scheduleFetch())
+    }
+
+    static route = {
+      navigationBar: {
+        title: 'Faves'
+      }
+    }
+
+    render() {
+
+      if (this.props.isLoading) {
+        return <ActivityIndicator />
+      } else {
+        return (
+          <Schedule
+            list={this.props.data.filter(item => item.fav === true)}
+          />)
+      }
+    }
+  
+  }
+  
+  FavesContainer.propTypes = {
+    isLoading: PropTypes.bool,
+    data: PropTypes.array,
+  };
+  
+  function mapStateToProps(state) {
+    return {
+      data: state.schedule.data,
+      isLoading: state.schedule.isLoading
     }
   }
 
-  render() {
-    return <Faves />
-  }
-}
-
-export default FavesContainer
+export default connect(mapStateToProps)(FavesContainer)

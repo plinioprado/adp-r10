@@ -29,5 +29,8 @@ export const styles = StyleSheet.create({
     color: colors.purple,
     marginTop: 10,
     fontWeight: 'bold'
+  },
+  plusMinus: {
+    color: colors.purple,
   }
 })
