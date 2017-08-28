@@ -1,13 +1,19 @@
 # R10 Project
 
-Mobile application using React Native for an upcoming developer conference called R10.
+Mobile application using React Native for an upcoming developer conference called R10. Project for Red Academy App Development Professional course
 
 # Stack
 
-React Native for iOS/Android
-Redux
-Realm
+* React Native for iOS and Android
+* Redux
+* Realm
+* React Native specialized modules:
+** ex-navigation
+** react-native-linear-gradient
+** react-native-maps
+** react-native-vector-icons
 
 # Dev notes
 
-* Usiong yarn and not npm
+* Using yarn and not npm
+* Priority for understanding and application of functionalities

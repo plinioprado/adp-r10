@@ -4,11 +4,11 @@ import { connect } from 'react-redux'
 
 import { ActivityIndicator} from 'react-native'
 import { scheduleFetch } from '../../redux/modules/schedule'
-import Schedule from '../Schedule/Schedule'
+import Schedule from '../../components/Schedule'
 
 class FavesContainer extends Component {
 
-    componentDidMount(props) {
+    componentDidMount() {
       this.props.dispatch(scheduleFetch())
     }
 
@@ -23,10 +23,10 @@ class FavesContainer extends Component {
       if (this.props.isLoading) {
         return <ActivityIndicator />
       } else {
-        console.log(this.props.data)
         return (
           <Schedule
             list={this.props.data.filter(item => item.data[0].fav === true)}
+            routeFrom="faves"
           />)
       }
     }
@@ -35,8 +35,9 @@ class FavesContainer extends Component {
   
   FavesContainer.propTypes = {
     isLoading: PropTypes.bool,
-    data: PropTypes.array,
-  };
+    dispatch: PropTypes.func,
+    data: PropTypes.array
+  }
   
   function mapStateToProps(state) {
     return {

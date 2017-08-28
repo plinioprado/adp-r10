@@ -1,6 +1,8 @@
 
 import React, { Component } from 'react'
-import protoTypes from 'prop-types'
+import PropTypes from 'prop-types'
+
+
 import {
   Animated,
   View,
@@ -13,7 +15,7 @@ import {
   UIManager,
 } from 'react-native';
 import { styles } from './styles'
-
+import logoImage from '../../assets/images/r10_logo.png'
 class About extends Component {
 
   constructor(props) {
@@ -39,7 +41,6 @@ class About extends Component {
     ).start();
   }
 
-  // TODO: Make rotation animated
   handleShowHide(id) {
     LayoutAnimation.easeInEaseOut()
     this.spinPlus()
@@ -64,7 +65,7 @@ class About extends Component {
       <View style={styles.about}>
         <ScrollView>
           <View style={styles.aboutHead}>
-            <Image source={require('../../assets/images/r10_logo.png')} style={styles.aboutImmage}/>
+            <Image source={logoImage} style={styles.aboutImmage}/>
           </View>
           <Text>
             R10 is a conference that focuses on just about anny topic related to dev.
@@ -106,7 +107,7 @@ class About extends Component {
 }
 
 About.propTypes = {
-
+  data: PropTypes.arrayOf(PropTypes.any)
 }
 
 export default About

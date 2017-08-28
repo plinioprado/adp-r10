@@ -4,11 +4,11 @@ import { connect } from 'react-redux'
 
 import { scheduleFetch } from '../../redux/modules/schedule'
 import { ActivityIndicator } from 'react-native'
-import Schedule from './Schedule'
+import Schedule from '../../components/Schedule'
 
 class ScheduleContainer extends Component {
 
-  componentDidMount(props) {
+  componentDidMount() {
     this.props.dispatch(scheduleFetch())
   }
 
@@ -25,6 +25,7 @@ class ScheduleContainer extends Component {
       return (
         <Schedule
           list={this.props.data}
+          routeFrom="schedule"
         />)
     }
   }
@@ -34,6 +35,7 @@ class ScheduleContainer extends Component {
 ScheduleContainer.propTypes = {
   isLoading: PropTypes.bool,
   data: PropTypes.array,
+  dispatch: PropTypes.func
 };
 
 function mapStateToProps(state) {

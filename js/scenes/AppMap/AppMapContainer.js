@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
 import MapView from 'react-native-maps'
+import pinImage from '../../assets/images/map_pin.png'
 
 import { styles } from './styles'
 
@@ -25,7 +25,7 @@ class AppMapContainer extends Component {
       >
         <MapView.Marker
           coordinate={{ latitude: 49.263509, longitude: -123.138117}}
-          image={require('../../assets/images/map_pin.png')}
+          image={pinImage}
         />
       </MapView>
       )

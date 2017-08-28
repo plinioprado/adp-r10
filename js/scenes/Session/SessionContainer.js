@@ -2,17 +2,9 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
 import { connect } from 'react-redux'
-import { 
-  ActivityIndicator,
-  View
- } from 'react-native'
+import { ActivityIndicator } from 'react-native'
 import { sessionFetch } from '../../redux/modules/session'
-import { goToSession } from '../../navigation/navigationHelpers'
-
-import { toggleFav, scheduleFetch } from '../../redux/modules/schedule'
-import { NavigationActions } from '@expo/ex-navigation'
-import Router from '../../navigation/routes'
-import Store from  '../../redux/store'
+import { toggleFav } from '../../redux/modules/schedule'
 
 import Session from './Session'
 
@@ -30,7 +22,7 @@ class SessionContainer extends Component {
 
   handleToggle(id) {
     toggleFav(id)
-    goToSession('session', this.props.sessionData)
+    this.props.dispatch(sessionFetch(this.props.sessionData.speaker))
   }
 
   render() {
@@ -50,5 +42,12 @@ const mapStateToProps = (state) => ({
   speakerData: state.session.data,
   loading: state.session.loading
 });
+
+SessionContainer.propTypes = {
+  isLoading: PropTypes.bool,
+  dispatch: PropTypes.func,
+  sessionData: PropTypes.PropTypes.object,
+  speakerData: PropTypes.PropTypes.object
+}
 
 export default connect(mapStateToProps)(SessionContainer);

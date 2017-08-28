@@ -1,5 +1,6 @@
 import React from 'react'
-import protoTypes from 'prop-types'
+import PropTypes from 'prop-types'
+
 import {
   Button,
   Image,
@@ -8,7 +9,7 @@ import {
   Text,
   View
 } from 'react-native';
-import { styles, colors } from './styles'
+import { styles } from './styles'
 
 const Speaker = ({ speakerData }) => (
   <ScrollView style={styles.speaker} >
@@ -24,5 +25,9 @@ const Speaker = ({ speakerData }) => (
     </View>
   </ScrollView>
 )
+
+Speaker.propTypes = {
+  speakerData: PropTypes.object
+}
 
 export default Speaker

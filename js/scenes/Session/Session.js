@@ -1,7 +1,6 @@
 import React from 'react'
-import protoTypes from 'prop-types'
+import PropTypes from 'prop-types'
 import {
-  Button,
   Image,
   View,
   Text,
@@ -48,6 +47,12 @@ const Session = ({ sessionData, speakerData, toggleFav }) => (
       </TouchableHighlight>
     </View>
   </View>
-  )
+)
+
+Session.propTypes = {
+  toggleFav: PropTypes.func,
+  sessionData: PropTypes.object,
+  speakerData: PropTypes.object
+}
 
 export default Session

@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-import { connect } from 'react-redux'
 import Speaker from './Speaker'
 
 class SpeakerContainer extends Component {
@@ -19,6 +18,10 @@ class SpeakerContainer extends Component {
       speakerData={this.props.speakerData}
       />
   }
+}
+
+SpeakerContainer.propTypes = {
+  speakerData: PropTypes.object
 }
 
 export default SpeakerContainer

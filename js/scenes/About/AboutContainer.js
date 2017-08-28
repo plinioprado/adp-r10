@@ -55,6 +55,12 @@ class AboutContainer extends Component {
   }
 }
 
+AboutContainer.propTypes = {
+  isLoading: PropTypes.bool,
+  dispatch: PropTypes.func,
+  data: PropTypes.arrayOf(PropTypes.any)
+}
+
 function mapStateToProps(state) {
   return {
     data: state.about.data,
