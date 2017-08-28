@@ -1,6 +1,4 @@
-import { Platform,
-  StyleSheet
-} from 'react-native'
+import { StyleSheet } from 'react-native'
 import { colors } from '../../config/styles'
 
 export const styles = StyleSheet.create({
@@ -23,5 +21,13 @@ export const styles = StyleSheet.create({
   },
   cardLocal: {
     color: colors.mediumGrey
+  },
+  time: {
+    padding: 5,
+    backgroundColor: colors.lightGrey
+  },
+  separator: {
+    height: 1,
+    backgroundColor: colors.mediumGrey
   }
 })

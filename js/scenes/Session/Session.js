@@ -5,6 +5,7 @@ import {
   Image,
   View,
   Text,
+  TouchableOpacity,
   TouchableHighlight
 } from 'react-native';
 
@@ -25,21 +26,20 @@ const Session = ({ sessionData, speakerData, toggleFav }) => (
     <Text style={styles.time}>{Moment.unix(sessionData.start_time).format('h:mm A')}</Text>
     <Text style={styles.descr}>{sessionData.description}</Text>
     <Text style={styles.presented}>Presented by:</Text>
-    <TouchableHighlight onPress={() => goToSpeaker(speakerData)}>
+    <TouchableOpacity onPress={() => goToSpeaker(speakerData)}>
       <View style={styles.speaker}>
         <Image style={styles.photo} source={{uri: speakerData.image}} />
         <Text>{speakerData.name}</Text>
       </View>
-    </TouchableHighlight>
+    </TouchableOpacity>
     <Text style={styles.separator}></Text>
     <View style={styles.faves}>
-      <Button
-        style={styles.button}
-        onPress={() => toggleFav(sessionData)} // TODO: check after in reducer
-        title={sessionData.fav ? 'Remove From Favorites' : 'Add to Favorites'}
-        color="#841584"
-        accessibilityLabel="Learn more about this purple button"
-      />
+      <TouchableOpacity
+        onPress={() => toggleFav(sessionData)}
+        activeOpacity={75 / 100}
+      >
+        <Text style={styles.button}>{sessionData.fav ? 'Remove From Favorites' : 'Add to Favorites'}</Text>
+      </TouchableOpacity>
     </View>
   </View>
   )

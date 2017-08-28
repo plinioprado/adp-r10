@@ -1,5 +1,6 @@
 // Reducers
 import { favesQuery, faveToggle } from '../../config/modules'
+import { formatSessionData } from './../../lib/dataFormatHelpers'
 
 const SCHEDULE_LOAD = 'SCHEDULE_LOAD'
 const TOGGLE_FAV = 'TOGGLE_FAV'
@@ -57,10 +58,15 @@ export function scheduleFetch() {
       .then(response =>response.json())
       .then(json => {
         const faveList = favesQuery()
-        const data = json.map(item => {
-          item.fav = !!faveList.find(it => (it.id === item.session_id))
-          return item})
-        dispatch(scheduleLoad(data))
+        let data
+        if (faveList && faveList.length) {
+          data = json.map(item => {
+            item.fav = !!faveList.find(it => (it.id === item.session_id))
+            return item})
+        } else {
+          data = json
+        }
+        dispatch(scheduleLoad(formatSessionData(data)))
       })
       .catch(error => console.log(`Error loading Sessions: ${error}`))
   }

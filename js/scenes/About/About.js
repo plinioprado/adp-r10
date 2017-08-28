@@ -3,7 +3,6 @@ import React, { Component } from 'react'
 import protoTypes from 'prop-types'
 import {
   Animated,
-  StyleSheet,
   View,
   Text,
   Image,
@@ -23,9 +22,10 @@ class About extends Component {
       shownId: null,
       spin: new Animated.Value(0),
     }
+
     if (Platform.OS === 'android') {
       UIManager.setLayoutAnimationEnabledExperimental 
-      && UIManager.setLayoutAnimationEnabledExperimental(true);
+      && UIManager.setLayoutAnimationEnabledExperimental(true)
     }
   }
 
@@ -41,10 +41,10 @@ class About extends Component {
 
   // TODO: Make rotation animated
   handleShowHide(id) {
-    LayoutAnimation.easeInEaseOut();
+    LayoutAnimation.easeInEaseOut()
+    this.spinPlus()
     if (id === this.state.shownId) id = null
     this.setState({shownId: id})
-    this.spinPlus()
   }
 
   render() {

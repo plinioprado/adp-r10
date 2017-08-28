@@ -52,12 +52,22 @@ export const styles = StyleSheet.create({
     borderRadius: 25
   },
   faves: {
-    marginTop: 20,
+    width: '100%',
     padding: 15,
+    marginTop: 20,
     borderTopColor: colors.mediumGrey,
     borderTopWidth: 1,
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   button: {
-    width: '100%'
+    backgroundColor: colors.purple,
+    padding: 10,
+    width: '100%',
+    color: 'white',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center'
   }
 })
