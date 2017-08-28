@@ -60,14 +60,17 @@ export const styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor:'white',
   },
   button: {
-    backgroundColor: colors.purple,
+    height: 40,
     padding: 10,
-    width: '100%',
-    color: 'white',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    alignItems: 'center'
+    paddingLeft: 20,
+    paddingRight: 20,
+    borderRadius:20,
+    borderColor: 'white'
+  },
+  buttonInner: {
+    color: 'white'
   }
 })

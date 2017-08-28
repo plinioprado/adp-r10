@@ -8,7 +8,7 @@ export const colors = {
   lightGrey: '#e6e6e6',
   blue: '#8797D6',
   purple: '#9963ea',
-  Red: '#cf392a'
+  red: '#cf392a'
 }
 
 export const typography = {

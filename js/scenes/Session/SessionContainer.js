@@ -7,6 +7,7 @@ import {
   View
  } from 'react-native'
 import { sessionFetch } from '../../redux/modules/session'
+import { goToSession } from '../../navigation/navigationHelpers'
 
 import { toggleFav, scheduleFetch } from '../../redux/modules/schedule'
 import { NavigationActions } from '@expo/ex-navigation'
@@ -18,7 +19,7 @@ import Session from './Session'
 class SessionContainer extends Component {
 
   componentDidMount() {
-    this.props.dispatch(sessionFetch(this.props.sessionData.speaker));
+    this.props.dispatch(sessionFetch(this.props.sessionData.speaker))
   }
 
   static route = {
@@ -29,7 +30,7 @@ class SessionContainer extends Component {
 
   handleToggle(id) {
     toggleFav(id)
-    this.render()
+    goToSession('session', this.props.sessionData)
   }
 
   render() {

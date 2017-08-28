@@ -12,7 +12,6 @@ class AppMapContainer extends Component {
     }
   }
 
-  // TODO: Put map to render
   render() {
     return (
       <MapView
@@ -27,11 +26,10 @@ class AppMapContainer extends Component {
         <MapView.Marker
           coordinate={{ latitude: 49.263509, longitude: -123.138117}}
           image={require('../../assets/images/map_pin.png')}
-        />`
+        />
       </MapView>
       )
   }
-}
-//      
+}   
   
 export default AppMapContainer

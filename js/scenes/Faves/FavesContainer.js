@@ -23,9 +23,10 @@ class FavesContainer extends Component {
       if (this.props.isLoading) {
         return <ActivityIndicator />
       } else {
+        console.log(this.props.data)
         return (
           <Schedule
-            list={this.props.data.filter(item => item.fav === true)}
+            list={this.props.data.filter(item => item.data[0].fav === true)}
           />)
       }
     }

@@ -15,12 +15,13 @@ import Icon from 'react-native-vector-icons/Ionicons'
 import { colors } from '../../config/styles'
 import { styles } from './styles'
 import Moment from 'moment';
+import LinearGradient from 'react-native-linear-gradient';
 
 const Session = ({ sessionData, speakerData, toggleFav }) => (
   <View style={styles.session}>
     <Text style={styles.local}>{sessionData.location}</Text>
     { sessionData.fav &&
-      <Icon name="ios-heart" size={20} color={colors.Red} />
+      <Icon name="ios-heart" size={20} color={colors.red} />
     }
     <Text style={styles.title}>{sessionData.title}</Text>
     <Text style={styles.time}>{Moment.unix(sessionData.start_time).format('h:mm A')}</Text>
@@ -34,12 +35,17 @@ const Session = ({ sessionData, speakerData, toggleFav }) => (
     </TouchableOpacity>
     <Text style={styles.separator}></Text>
     <View style={styles.faves}>
-      <TouchableOpacity
+      <TouchableHighlight
         onPress={() => toggleFav(sessionData)}
-        activeOpacity={75 / 100}
       >
-        <Text style={styles.button}>{sessionData.fav ? 'Remove From Favorites' : 'Add to Favorites'}</Text>
-      </TouchableOpacity>
+        <LinearGradient 
+          start={{ x: 0.0, y: 0.0 }} end={{ x: 1.0, y: 1.0 }}
+          colors={[colors.purple, colors.blue]}
+          style={styles.button}
+        >
+          <Text style={styles.buttonInner}>{sessionData.fav ? 'Remove From Favorites' : 'Add to Favorites'}</Text>
+        </LinearGradient>
+      </TouchableHighlight>
     </View>
   </View>
   )
