@@ -11,23 +11,23 @@ import Router from './routes'
 import { colors, typography } from '../config/styles'
 import { styles } from './styles'
 
-const defaultRouteConfig = {
-  navigationBar: {
-    tintColor: 'white',
-    titleStyle: {
-      fontFamily: typography.fontMain,
-    },
-    renderBackground: function lg() {
-      return (
-        <LinearGradient 
-          start={{ x: 0.0, y: 0.0 }} end={{ x: 1.0, y: 1.0 }}
-          colors={[colors.red, colors.purple]}
-          style={styles.bgTop}
-         />
-      )
-    }
-  }
-}
+// const defaultRouteConfig = {
+//   navigationBar: {
+//     tintColor: 'white',
+//     titleStyle: {
+//       fontFamily: typography.fontMain,
+//     },
+//     renderBackground: function lg() {
+//       return (
+//         <LinearGradient 
+//           start={{ x: 0.0, y: 0.0 }} end={{ x: 1.0, y: 1.0 }}
+//           colors={[colors.red, colors.purple]}
+//           style={styles.bgTop}
+//          />
+//       )
+//     }
+//   }
+// }
 
 
 class NavigationLayout extends Component {
