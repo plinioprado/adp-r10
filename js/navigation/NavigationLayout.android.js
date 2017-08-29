@@ -6,7 +6,6 @@ import {
 } from '@expo/ex-navigation';
 
 import {
-  StyleSheet,
   View
 } from 'react-native'
 
@@ -15,10 +14,23 @@ import { colors, typography } from '../config/styles'
 import { styles } from './styles'
 import { Text } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons'
+import LinearGradient from 'react-native-linear-gradient'
 
 const defaultRouteConfig = {
   navigationBar: {
-    visible: false
+    tintColor: 'white',
+    titleStyle: {
+      fontFamily: typography.fontMain,
+    },
+    renderBackground: function lg() {
+      return (
+        <LinearGradient 
+          start={{ x: 0.0, y: 0.0 }} end={{ x: 1.0, y: 1.0 }}
+          colors={[colors.red, colors.purple]}
+          style={styles.bgTop}
+         />
+      )
+    }
   }
 }
 
@@ -47,10 +59,10 @@ class NavigationLayout extends Component {
       </DrawerNavigationItem>
 
       <DrawerNavigationItem
-          id='appMap'
-          selectedStyle={styles.selectedItemStyle}
-          renderIcon={(isSelected) => this.renderIcon("md-map", isSelected)}
-          renderTitle={isSelected => this._renderTitle('Map', isSelected)}
+        id='appMap'
+        selectedStyle={styles.selectedItemStyle}
+        renderIcon={(isSelected) => this.renderIcon("md-map", isSelected)}
+        renderTitle={isSelected => this._renderTitle('Map', isSelected)}
         >
         <StackNavigation
           id="appMap"

@@ -25,10 +25,10 @@ class About extends Component {
       spin: new Animated.Value(0),
     }
 
-    if (Platform.OS === 'android') {
-      UIManager.setLayoutAnimationEnabledExperimental 
-      && UIManager.setLayoutAnimationEnabledExperimental(true)
-    }
+    // if (Platform.OS === 'android') {
+    //   UIManager.setLayoutAnimationEnabledExperimental 
+    //   && UIManager.setLayoutAnimationEnabledExperimental(true)
+    // }
   }
 
   spinPlus = () => {

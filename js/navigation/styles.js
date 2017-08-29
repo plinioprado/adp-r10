@@ -16,5 +16,12 @@ export const styles = StyleSheet.create({
     fontSize: 16,
     color: colors.purple,
     marginLeft: 8
+  },
+  bgTop: {
+    flex: 1,
+    paddingLeft: 15,
+    paddingRight: 15,
+    alignSelf: 'stretch',
+    height: '100%'
   }
 })

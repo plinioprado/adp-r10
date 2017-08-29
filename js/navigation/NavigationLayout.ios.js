@@ -4,25 +4,31 @@ import {
   TabNavigation,
   TabNavigationItem as TabItem,
 } from '@expo/ex-navigation';
-
-import Router from './routes'
-import { colors, typography } from '../config/styles'
-
 import { Text } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons'
+import LinearGradient from 'react-native-linear-gradient'
+import Router from './routes'
+import { colors, typography } from '../config/styles'
+import { styles } from './styles'
 
 const defaultRouteConfig = {
   navigationBar: {
-    tintColor: 'white'
+    tintColor: 'white',
+    titleStyle: {
+      fontFamily: typography.fontMain,
+    },
+    renderBackground: function lg() {
+      return (
+        <LinearGradient 
+          start={{ x: 0.0, y: 0.0 }} end={{ x: 1.0, y: 1.0 }}
+          colors={[colors.red, colors.purple]}
+          style={styles.bgTop}
+         />
+      )
+    }
   }
-    
-    //titleStyle: {
-    //  font intto property here
-    //},
-    // // renderBackground: () => (
-    //   // return component or background
-    // )
 }
+
 
 class NavigationLayout extends Component {
 
@@ -84,10 +90,10 @@ class NavigationLayout extends Component {
       renderTitle={this.renderTitle}
       >
         <StackNavigation
-            id="about"
-            navigatorUID="about"
-            initialRoute={Router.getRoute('about')}
-            defaultRouteConfig={defaultRouteConfig}
+          id="about"
+          navigatorUID="about"
+          initialRoute={Router.getRoute('about')}
+          defaultRouteConfig={defaultRouteConfig}
         />
     </TabItem>
 
