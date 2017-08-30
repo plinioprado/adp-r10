@@ -7,22 +7,30 @@ export const styles = StyleSheet.create({
   },
   header: {
     height: 50,
+    maxHeight: 50,
+    width: '100%',
     marginTop: 15,
     flex: 1,
     flexDirection: 'row',
-    width: '100%',
   },
   icon: {
-    marginTop: 10,
+    height: 50,
+    width: 50,
     position: 'absolute',
+    marginTop: 10,
+  },
+  iconContent: {
   },
   title: {
     width: '100%',
+    height: 50,
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    
   },
   titleText: {
+    fontSize: 16,
     color: 'white',
   },
   card: {
@@ -34,6 +42,7 @@ export const styles = StyleSheet.create({
     backgroundColor: 'white',
     borderRadius: 6,
   },
+
   photo: {
     width: 100,
     height: 100,

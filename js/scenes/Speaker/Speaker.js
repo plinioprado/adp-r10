@@ -16,15 +16,17 @@ import { colors } from '../../config/styles'
 import { styles } from './styles'
 
 const Speaker = ({ speakerData, goBack }) => (
-    
-    <ScrollView style={styles.speaker} stickyHeaderIndices={[0]} >
-      <View style={styles.header}>
-      <TouchableOpacity  onPress={() => goBack()} >
-          <Icon name="ios-close" style={styles.icon} size={40} color={'white'} />
-          <View style={styles.title}><Text style={styles.titleText}>About the Speaker</Text></View>
-        </TouchableOpacity>
+  <View style={styles.speaker}>
+    <View style={styles.header}>
+      <TouchableOpacity  onPress={() => goBack()} style={styles.icon}>
+        <Icon name="ios-close" size={40} color={'white'} class={styles.iconContent} />
+      </TouchableOpacity>
+      <View style={styles.title}>
+        <Text style={styles.titleText}>About the Speaker</Text>
       </View>
-      <View style={styles.card} >
+    </View>
+    <ScrollView >
+      <View style={styles.card}>
         <Image style={styles.photo} source={{uri: speakerData.image}} />
         <Text style={styles.name} >{speakerData.name}</Text>
         <Text style={styles.bio} >{speakerData.bio}</Text>
@@ -41,7 +43,8 @@ const Speaker = ({ speakerData, goBack }) => (
       </TouchableHighlight>
       </View>
     </ScrollView>
-  
+  </View>
+
 )
 
 Speaker.propTypes = {

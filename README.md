@@ -7,11 +7,6 @@ Mobile application using React Native for an upcoming developer conference calle
 * React Native for iOS and Android
 * Redux
 * Realm
-* React Native specialized modules:
-  * ex-navigation
-  * react-native-linear-gradient
-  * react-native-maps
-  * react-native-vector-icons
 
 # Dev notes
 
