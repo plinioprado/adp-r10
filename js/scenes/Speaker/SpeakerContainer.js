@@ -7,21 +7,26 @@ class SpeakerContainer extends Component {
 
   static route = {
     navigationBar: {
-      title: 'About the Speaker',
-      tintColor: 'white',
-      backgroundColor: 'black'   
+      visible: false   
     }
+  }
+
+  goBack = () => {
+    console.log('back')
+    this.props.navigator.pop()
   }
 
   render() {
     return <Speaker
       speakerData={this.props.speakerData}
+      goBack={() => this.goBack()}
       />
   }
 }
 
 SpeakerContainer.propTypes = {
-  speakerData: PropTypes.object
+  speakerData: PropTypes.object,
+  navigator: PropTypes.object
 }
 
 export default SpeakerContainer

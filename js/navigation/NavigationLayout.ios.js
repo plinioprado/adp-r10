@@ -3,7 +3,7 @@ import {
   StackNavigation,
   TabNavigation,
   TabNavigationItem as TabItem,
-} from '@expo/ex-navigation';
+} from '@expo/ex-navigation'
 import { Text } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons'
 import LinearGradient from 'react-native-linear-gradient'

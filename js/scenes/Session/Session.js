@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   TouchableHighlight
 } from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
 
 import { goToSpeaker } from '../../navigation/navigationHelpers'
 
@@ -14,7 +15,6 @@ import Icon from 'react-native-vector-icons/Ionicons'
 import { colors } from '../../config/styles'
 import { styles } from './styles'
 import Moment from 'moment';
-import LinearGradient from 'react-native-linear-gradient';
 
 const Session = ({ sessionData, speakerData, toggleFav }) => (
   <View style={styles.session}>
