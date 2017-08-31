@@ -16,7 +16,7 @@ import { colors } from '../../config/styles'
 import { styles } from './styles'
 import Moment from 'moment';
 
-const Session = ({ sessionData, speakerData, toggleFav }) => (
+const Session = ({ sessionData, speakerData, handleToggle }) => (
   <View style={styles.session}>
     <Text style={styles.local}>{sessionData.location}</Text>
     { sessionData.fav &&
@@ -35,7 +35,7 @@ const Session = ({ sessionData, speakerData, toggleFav }) => (
     <Text style={styles.separator}></Text>
     <View style={styles.faves}>
       <TouchableHighlight
-        onPress={() => toggleFav(sessionData)}
+        onPress={() => handleToggle(sessionData)}
       >
         <LinearGradient 
           start={{ x: 0.0, y: 0.0 }} end={{ x: 1.0, y: 1.0 }}

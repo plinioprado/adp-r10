@@ -32,16 +32,19 @@ export const favesQuery = () => {
 }
 
 export const faveToggle =(id) => {
+  let ok = undefined
   realm.write(() => {
     let faves = realm.objects('Fave').filtered('id == $0', id).map(fave => fave)
     if (faves && faves.length) {
       realm.delete(faves[0]);
+      ok = false
     } else {
       realm.create('Fave', { id: id, faved_on: new Date() })
+      ok =  true
     }
-  });
-  faves = realm.objects('Fave').filtered('id == $0', id).map(fave => fave)
-  return !!(faves && faves.length)
+  })
+  console.log('ok', ok)
+  return ok
 }
 
 const realm =  new Realm({schema: [Fave]})

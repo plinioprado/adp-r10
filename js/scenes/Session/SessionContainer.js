@@ -32,7 +32,7 @@ class SessionContainer extends Component {
       return <Session
         sessionData={this.props.sessionData}
         speakerData={this.props.speakerData}
-        toggleFav={(id) => this.handleToggle(id)}
+        handleToggle={(id) => this.handleToggle(id)}
         />
     }
   }
