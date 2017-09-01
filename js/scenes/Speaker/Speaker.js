@@ -30,7 +30,7 @@ const Speaker = ({ speakerData, goBack }) => (
         <Image style={styles.photo} source={{uri: speakerData.image}} />
         <Text style={styles.name} >{speakerData.name}</Text>
         <Text style={styles.bio} >{speakerData.bio}</Text>
-        <TouchableHighlight
+        <TouchableOpacity
         onPress={() => Linking.openURL(speakerData.url).catch(err => ('Error: ', err))}
       >
         <LinearGradient 
@@ -40,7 +40,7 @@ const Speaker = ({ speakerData, goBack }) => (
         >
           <Text style={styles.buttonInner}>Read More on Wikipedia</Text>
         </LinearGradient>
-      </TouchableHighlight>
+      </TouchableOpacity>
       </View>
     </ScrollView>
   </View>

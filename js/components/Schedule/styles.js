@@ -10,8 +10,6 @@ export const styles = StyleSheet.create({
   },
   card: {
     padding: 15,
-    borderBottomColor: colors.mediumGrey,
-    borderBottomWidth: StyleSheet.hairlineWidth,
     flexWrap: 'wrap',
     flexDirection: 'row',
     justifyContent: 'space-between',

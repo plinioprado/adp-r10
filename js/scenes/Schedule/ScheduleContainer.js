@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 
 import { scheduleFetch } from '../../redux/modules/schedule'
-import { ActivityIndicator } from 'react-native'
+import LoadIcon from '../../components/LoadIcon'
 import Schedule from '../../components/Schedule'
 
 class ScheduleContainer extends Component {
@@ -20,7 +20,7 @@ class ScheduleContainer extends Component {
 
   render() {  
     if (this.props.isLoading) {
-      return <ActivityIndicator />
+      return <LoadIcon />
     } else {
       return (
         <Schedule

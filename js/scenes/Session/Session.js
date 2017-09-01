@@ -4,8 +4,7 @@ import {
   Image,
   View,
   Text,
-  TouchableOpacity,
-  TouchableHighlight
+  TouchableOpacity
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
@@ -34,7 +33,7 @@ const Session = ({ sessionData, speakerData, handleToggle }) => (
     </TouchableOpacity>
     <Text style={styles.separator}></Text>
     <View style={styles.faves}>
-      <TouchableHighlight
+      <TouchableOpacity
         onPress={() => handleToggle(sessionData)}
       >
         <LinearGradient 
@@ -44,7 +43,7 @@ const Session = ({ sessionData, speakerData, handleToggle }) => (
         >
           <Text style={styles.buttonInner}>{sessionData.fav ? 'Remove From Favorites' : 'Add to Favorites'}</Text>
         </LinearGradient>
-      </TouchableHighlight>
+      </TouchableOpacity>
     </View>
   </View>
 )

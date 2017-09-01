@@ -12,7 +12,6 @@ class SpeakerContainer extends Component {
   }
 
   goBack = () => {
-    console.log('back')
     this.props.navigator.pop()
   }
 

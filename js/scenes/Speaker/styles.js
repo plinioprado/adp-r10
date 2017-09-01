@@ -66,6 +66,7 @@ export const styles = StyleSheet.create({
     borderColor: 'white'
   },
   buttonInner: {
+    backgroundColor:'transparent',
     color: 'white'
   }
 })

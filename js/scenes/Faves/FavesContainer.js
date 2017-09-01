@@ -5,6 +5,7 @@ import { connect } from 'react-redux'
 import { ActivityIndicator} from 'react-native'
 import { scheduleFetch } from '../../redux/modules/schedule'
 import Schedule from '../../components/Schedule'
+import LoadIcon from '../../components/LoadIcon'
 
 class FavesContainer extends Component {
 
@@ -21,7 +22,7 @@ class FavesContainer extends Component {
     render() {
 
       if (this.props.isLoading) {
-        return <ActivityIndicator />
+        return <LoadIcon />
       } else {
         return (
           <Schedule
