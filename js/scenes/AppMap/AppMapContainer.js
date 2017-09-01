@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
-import MapView from 'react-native-maps'
-import pinImage from '../../assets/images/map_pin.png'
 
-import { styles } from './styles'
+import AppMap from './AppMap'
+
+// import MapView from 'react-native-maps'
+// import pinImage from '../../assets/images/map_pin.png'
+// import { styles } from './styles'
 
 class AppMapContainer extends Component {
 
@@ -14,20 +16,7 @@ class AppMapContainer extends Component {
 
   render() {
     return (
-      <MapView
-        style={styles.map}
-        region={{
-          latitude: 49.263509,
-          longitude: -123.138117,
-          latitudeDelta: 0.0422,
-          longitudeDelta: 0.0221,
-        }}
-      >
-        <MapView.Marker
-          coordinate={{ latitude: 49.263509, longitude: -123.138117}}
-          image={pinImage}
-        />
-      </MapView>
+      <AppMap />
       )
   }
 }   
